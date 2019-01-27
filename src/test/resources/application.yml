@@ -1,0 +1,11 @@
+# Test:
+spring:
+    profile:
+        active: local # 기본환경 설정
+
+# local 환경
+---
+spring:
+    profile: local
+    jpa:
+        show-sql: true
