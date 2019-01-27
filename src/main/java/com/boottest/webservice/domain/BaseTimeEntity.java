@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class) //JPA에선 auditing이 생성시간, 수정시간 관련인듯? (JPA entity listener to capture auditing information on persiting and updating entities.)
 public class BaseTimeEntity {
     @CreatedDate //Entity가 생성되어 저장될 때 자동으로 시간 저장
-    private LocalDateTime createDate;
+    private LocalDateTime created_Date;
 
     @LastModifiedDate //Entity의 값을 변형할 때 자동으로 시간 저장
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modified_Date;
 }

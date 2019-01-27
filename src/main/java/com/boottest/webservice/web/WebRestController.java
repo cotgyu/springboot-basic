@@ -2,6 +2,7 @@ package com.boottest.webservice.web;
 
 import com.boottest.webservice.domain.PostsRepository;
 import com.boottest.webservice.dto.posts.PostsSaveRequestDto;
+import com.boottest.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,7 @@ public class WebRestController {
     */
     private PostsRepository postsRepository;
 
+    private PostsService postsService;
 
     @GetMapping("/Hello")
     public String Hello()
@@ -29,8 +31,12 @@ public class WebRestController {
     }
 
     @PostMapping("/post")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto){
-        postsRepository.save(dto.toEntity());
+    public Long savePosts(@RequestBody PostsSaveRequestDto dto){
+        //Controller posts 호출 시 save 실행
+        //postsRepository.save(dto.toEntity());
+
+        //Service의 save로 교체하기
+        return postsService.save(dto);
     }
 
 }
