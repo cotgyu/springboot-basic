@@ -65,7 +65,7 @@ public class PostsRepositoryTest {
 
         //테스트 검증
         Posts posts = postsList.get(0);
-        assertTrue(posts.getCreateDate().isAfter(now));
-        assertTrue(posts.getModifiedDate().isAfter(now));
+        assertTrue(posts.getCreated_Date().isAfter(now));
+        assertTrue(posts.getModified_Date().isAfter(now));
     }
 }
